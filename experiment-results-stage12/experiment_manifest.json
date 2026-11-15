@@ -1,0 +1,229 @@
+{
+  "created_at": "2026-11-11T16:04:57.441010+00:00",
+  "groups": [
+    {
+      "name": "A_single_agent_tools",
+      "label": "A. Single Agent + Tools",
+      "description": "One agent with the common tool set.",
+      "multi_agent": false,
+      "memory_enabled": false,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "B_static_multi_agent",
+      "label": "B. Static Multi-Agent",
+      "description": "Fixed multi-agent workflow without memory or reflection.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "C_static_memory",
+      "label": "C. Static Multi-Agent + Memory",
+      "description": "Static multi-agent workflow with cross-task experience memory.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "D_static_reflection",
+      "label": "D. Static Multi-Agent + Reflection",
+      "description": "Static multi-agent workflow with execution-aware reflection.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": true,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "E_full",
+      "label": "E. Full RepoPilot",
+      "description": "Adaptive planning with memory and reflection.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": true,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_adaptive",
+      "label": "Full vs No Adaptive Planning",
+      "description": "Full system with adaptive planning disabled.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": true,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_memory",
+      "label": "Full vs No Memory",
+      "description": "Full system with experience memory disabled.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": true,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_reflection",
+      "label": "Full vs No Reflection",
+      "description": "Full system with reflection disabled.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": false,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    }
+  ],
+  "paired_task_key": [
+    "task_id",
+    "run_index"
+  ],
+  "fixed_fields": [
+    "model_id",
+    "prompt_version",
+    "tool_set",
+    "budget"
+  ],
+  "disclosed_differences": [
+    "memory_enabled",
+    "reflection_enabled",
+    "adaptive_planning",
+    "multi_agent"
+  ]
+}

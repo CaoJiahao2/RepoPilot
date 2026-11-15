@@ -1,0 +1,53 @@
+{
+  "task_id": "task-002",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "run_index": 0,
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "code_version": "unversioned",
+  "config": {
+    "execution_mode": "real",
+    "research": "code_rag",
+    "patch": "git_apply_recount",
+    "validation_retries": 1
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 180
+  },
+  "started_at": "2026-11-14T08:08:57.151522Z",
+  "finished_at": "2026-11-14T08:09:26.465381Z",
+  "base_commit": "453722cf36ff036b06b2f57e0b099fe77ffaa100",
+  "workspace_path": "experiment-results-real-full-v2/runs/task-002/real_full_pipeline_v2-0/worktree",
+  "result": {
+    "status": "succeeded",
+    "success": true,
+    "patch_passed": true,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": "In app.py, clamp's upper-bound check returns the original value when value > high, so the function never clamps oversized inputs to high. The test demonstrates this by expecting clamp(15, 0, 10) to equal 10.",
+    "patch_diff": "--- a/app.py\n+++ b/app.py\n@@ -1,4 +1,4 @@\n def clamp(value, low, high):\n     if value > high:\n-        return value\n+        return high\n     return max(low, value)",
+    "logs": "patch applied and post-patch tests passed",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 29.221556667005643,
+    "input_tokens": 2855,
+    "output_tokens": 2611,
+    "llm_calls": 4,
+    "estimated_cost_usd": null,
+    "execution_mode": "real"
+  },
+  "agent_input_task_id": "task-002",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

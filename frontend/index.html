@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepoPilot Control Room</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">RP</div>
+      <div>
+        <div class="brand-name">RepoPilot</div>
+        <div class="brand-subtitle">Control Room</div>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="connection-state" id="connectionState"><span class="status-dot"></span> Connecting</span>
+      <button class="button button-quiet" id="refreshButton" type="button"><i data-lucide="refresh-cw"></i><span>Refresh</span></button>
+      <button class="button button-primary" id="newTaskButton" type="button"><i data-lucide="plus"></i><span>New task</span></button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <nav class="nav-list" aria-label="Primary">
+        <button class="nav-item active" data-page="tasks" type="button"><i data-lucide="activity"></i><span>Tasks</span></button>
+        <button class="nav-item" data-page="experiments" type="button"><i data-lucide="bar-chart-3"></i><span>Experiments</span></button>
+        <button class="nav-item" data-page="system" type="button"><i data-lucide="shield-check"></i><span>System</span></button>
+      </nav>
+      <div class="sidebar-note">
+        <div class="eyebrow">Runtime mode</div>
+        <strong id="runtimeMode">Live API</strong>
+        <p>Task state, traces, diffs, and reports come from the RepoPilot API.</p>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="page active" id="tasksPage">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Repair operations</div>
+            <h1>Task queue</h1>
+            <p class="page-intro">Submit a repair task, then inspect its evidence, patch, tests, and trace.</p>
+          </div>
+          <div class="heading-actions">
+            <button class="button button-secondary" id="openFormButton" type="button"><i data-lucide="file-plus-2"></i><span>Open submit form</span></button>
+          </div>
+        </div>
+
+        <div class="metric-grid" id="metricGrid">
+          <article class="metric-card"><div class="metric-label">Open</div><strong class="metric-value" id="openCount">0</strong><div class="metric-caption">queued or running</div></article>
+          <article class="metric-card"><div class="metric-label">Succeeded</div><strong class="metric-value metric-success" id="successCount">0</strong><div class="metric-caption">completed reports</div></article>
+          <article class="metric-card"><div class="metric-label">Failed</div><strong class="metric-value metric-danger" id="failedCount">0</strong><div class="metric-caption">needs inspection</div></article>
+          <article class="metric-card"><div class="metric-label">Last update</div><strong class="metric-value metric-small" id="lastUpdate">--</strong><div class="metric-caption">API task store</div></article>
+        </div>
+
+        <section class="panel" id="submitPanel">
+          <div class="panel-header">
+            <div>
+              <div class="eyebrow">New repair request</div>
+              <h2>Submit a repository bug</h2>
+            </div>
+            <button class="icon-button" id="closeFormButton" type="button" aria-label="Close submit form"><i data-lucide="x"></i></button>
+          </div>
+          <form id="taskForm" class="task-form">
+            <div class="form-grid">
+              <label class="field"><span>Task ID</span><input id="taskId" name="task_id" placeholder="task-001" required></label>
+              <label class="field"><span>Repository path</span><input id="repoPath" name="repo_path" placeholder="/path/to/repository" required></label>
+              <label class="field field-wide"><span>Bug description</span><textarea id="issue" name="issue" rows="3" placeholder="Describe the observed and expected behavior" required></textarea></label>
+              <label class="field field-wide"><span>Stack trace <small>optional</small></span><textarea id="stackTrace" name="stack_trace" rows="3" placeholder='File "app.py", line 12, in function'></textarea></label>
+              <label class="field field-wide"><span>Test command as JSON array</span><textarea id="testCommand" name="test_command" rows="2" required>["python", "-m", "pytest", "-q"]</textarea></label>
+            </div>
+            <div class="form-footer">
+              <div class="form-hint"><i data-lucide="lock-keyhole"></i><span>Commands are sent as structured arguments, never through a shell.</span></div>
+              <button class="button button-primary" type="submit"><i data-lucide="play"></i><span>Submit task</span></button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="panel-header">
+            <div>
+              <div class="eyebrow">Live task store</div>
+              <h2>Recent tasks</h2>
+            </div>
+            <div class="panel-meta" id="taskCountLabel">0 tasks</div>
+          </div>
+          <div class="table-wrap">
+            <table class="task-table">
+              <thead><tr><th>Task</th><th>Status</th><th>Approval</th><th>Updated</th><th></th></tr></thead>
+              <tbody id="taskRows"></tbody>
+            </table>
+            <div class="empty-state" id="taskEmpty"><i data-lucide="inbox"></i><div>No tasks yet</div><p>Submit a repair request to begin.</p></div>
+          </div>
+        </section>
+
+        <section class="detail-grid" id="detailGrid">
+          <article class="panel detail-panel">
+            <div class="panel-header">
+              <div><div class="eyebrow">Selected task</div><h2 id="detailTitle">Select a task</h2></div>
+              <div class="detail-actions"><button class="button button-secondary" id="approveButton" type="button"><i data-lucide="check"></i><span>Approve</span></button><button class="button button-danger" id="cancelButton" type="button"><i data-lucide="square"></i><span>Cancel</span></button></div>
+            </div>
+            <div class="detail-summary" id="detailSummary">Choose a task from the queue to inspect its report.</div>
+            <div class="tab-list" role="tablist">
+              <button class="tab active" data-tab="overview" type="button">Overview</button>
+              <button class="tab" data-tab="trace" type="button">Trace</button>
+              <button class="tab" data-tab="diff" type="button">Diff</button>
+              <button class="tab" data-tab="tests" type="button">Tests</button>
+            </div>
+            <div class="tab-content active" data-tab-content="overview" id="overviewContent"></div>
+            <div class="tab-content" data-tab-content="trace" id="traceContent"></div>
+            <div class="tab-content" data-tab-content="diff" id="diffContent"></div>
+            <div class="tab-content" data-tab-content="tests" id="testsContent"></div>
+          </article>
+        </section>
+      </section>
+
+      <section class="page" id="experimentsPage">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">Saved real run · 2026-11-14</div>
+            <h1>Experiment telemetry</h1>
+            <p class="page-intro">The charts below are generated from the saved 30-run Full Pipeline validation.</p>
+          </div>
+          <a class="button button-secondary" href="/assets/resolution-rate.svg" target="_blank" rel="noreferrer"><i data-lucide="download"></i><span>Open chart</span></a>
+        </div>
+        <div class="experiment-banner"><div><span class="eyebrow">Full Pipeline validation</span><strong>28 / 30 successful runs</strong><p>Bootstrap 95% interval: 83.33% - 100.00%</p></div><div class="banner-stat"><span>Mean latency</span><strong>30.67s</strong></div><div class="banner-stat"><span>LLM calls</span><strong>117</strong></div><div class="banner-stat"><span>Input tokens</span><strong>82,825</strong></div></div>
+        <div class="chart-grid"><figure class="chart-card"><figcaption>Resolution rate</figcaption><img src="/assets/resolution-rate.svg" alt="Resolution rate chart"></figure><figure class="chart-card"><figcaption>P50 latency</figcaption><img src="/assets/latency-p50.svg" alt="Latency chart"></figure><figure class="chart-card"><figcaption>Failure breakdown</figcaption><img src="/assets/failure-breakdown.svg" alt="Failure breakdown chart"></figure></div>
+        <div class="panel"><div class="panel-header"><div><div class="eyebrow">Interpretation</div><h2>What this run proves</h2></div></div><div class="prose"><p>Real LLM, Code RAG, Worktree, Patch Executor, and pytest completed 30 runs across 10 fixtures. The result is a Full Pipeline stability measurement, not a causal comparison of A-E experiment groups.</p><p>Failure cases were one coding API failure and one patch application failure. No verified post-patch regression was observed. Root-cause accuracy and monetary cost remain unknown.</p></div></div>
+      </section>
+
+      <section class="page" id="systemPage">
+        <div class="page-heading"><div><div class="eyebrow">Runtime boundaries</div><h1>System status</h1><p class="page-intro">A compact view of the execution model behind the UI.</p></div></div>
+        <div class="system-grid">
+          <article class="system-card"><i data-lucide="workflow"></i><h2>Structured workflow</h2><p>Planner, Research, Diagnosis, Coding, Review, and report nodes exchange typed state.</p></article>
+          <article class="system-card"><i data-lucide="git-branch"></i><h2>Isolated edits</h2><p>Unified Diffs are validated and applied only inside an isolated Git Worktree.</p></article>
+          <article class="system-card"><i data-lucide="terminal-square"></i><h2>Controlled commands</h2><p>Tools and tests use argument arrays and structured result records.</p></article>
+          <article class="system-card"><i data-lucide="file-check-2"></i><h2>Real evidence</h2><p>Reports preserve Evidence, Diff, Baseline Test, Post-patch Test, Trace, and cost usage.</p></article>
+        </div>
+        <div class="panel"><div class="panel-header"><div><div class="eyebrow">Safety boundary</div><h2>Not exposed by this frontend</h2></div></div><div class="prose"><p>The UI does not provide arbitrary command execution, Shell access, push, merge, or deployment controls. Approval is recorded before final patch export.</p></div></div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

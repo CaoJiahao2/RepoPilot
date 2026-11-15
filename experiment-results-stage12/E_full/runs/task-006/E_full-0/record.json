@@ -1,0 +1,73 @@
+{
+  "task_id": "task-006",
+  "dataset": "tasks",
+  "experiment_group": "E_full",
+  "run_index": 0,
+  "model_id": "unspecified",
+  "prompt_version": "v1",
+  "code_version": "unversioned",
+  "config": {
+    "name": "E_full",
+    "label": "E. Full RepoPilot",
+    "description": "Adaptive planning with memory and reflection.",
+    "multi_agent": true,
+    "memory_enabled": true,
+    "reflection_enabled": true,
+    "adaptive_planning": true,
+    "model_id": "unspecified",
+    "prompt_version": "v1",
+    "generation_params": {},
+    "tool_set": [
+      "list_files",
+      "search_code",
+      "read_file",
+      "git_status",
+      "git_diff"
+    ],
+    "budget": {
+      "max_llm_calls": 30,
+      "max_total_tokens": 100000,
+      "max_tool_calls": 100,
+      "max_runtime_seconds": 900
+    },
+    "notes": ""
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 900
+  },
+  "started_at": "2026-11-11T16:04:54.826246Z",
+  "finished_at": "2026-11-11T16:04:54.911771Z",
+  "base_commit": "f33bf1662d0581ca7ab8298f56cdb3353dcd745e",
+  "workspace_path": "experiment-results-stage12/E_full/runs/task-006/E_full-0/worktree",
+  "result": {
+    "status": "skipped",
+    "success": false,
+    "patch_passed": false,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": null,
+    "patch_diff": "",
+    "logs": "real benchmark executor is not configured; result is not an agent benchmark",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "llm_calls": 0,
+    "estimated_cost_usd": null,
+    "execution_mode": "skipped"
+  },
+  "agent_input_task_id": "task-006",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

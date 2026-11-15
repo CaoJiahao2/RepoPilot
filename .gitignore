@@ -1,0 +1,26 @@
+.env
+.env.*
+!.env.example
+*.local.yaml
+configs/local.yaml
+local.settings.*
+
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+repopilot.db
+repopilot-tasks.db
+
+# Intermediate local validation outputs
+experiment-results-real-full/
+experiment-results-real-full-smoke/
+validation-results/

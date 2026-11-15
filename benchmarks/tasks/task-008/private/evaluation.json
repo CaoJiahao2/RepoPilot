@@ -1,0 +1,17 @@
+{
+  "task_id": "task-008",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def format_name(first, last):\n-    return first + last\n+    return f\"{first} {last}\"\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "the name parts are concatenated without a separator",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

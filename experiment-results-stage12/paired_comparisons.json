@@ -1,0 +1,116 @@
+[
+  {
+    "comparison": "Multi-Agent vs Single-Agent",
+    "left_group": "B_static_multi_agent",
+    "right_group": "A_single_agent_tools",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  },
+  {
+    "comparison": "Memory vs Static",
+    "left_group": "C_static_memory",
+    "right_group": "B_static_multi_agent",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  },
+  {
+    "comparison": "Reflection vs Static",
+    "left_group": "D_static_reflection",
+    "right_group": "B_static_multi_agent",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  },
+  {
+    "comparison": "Adaptive Planning ablation",
+    "left_group": "E_full",
+    "right_group": "abl_no_adaptive",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  },
+  {
+    "comparison": "Memory ablation",
+    "left_group": "E_full",
+    "right_group": "abl_no_memory",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  },
+  {
+    "comparison": "Reflection ablation",
+    "left_group": "E_full",
+    "right_group": "abl_no_reflection",
+    "paired_tasks": 10,
+    "left_wins": 0,
+    "right_wins": 0,
+    "ties": 0,
+    "left_success_rate": null,
+    "right_success_rate": null,
+    "success_rate_difference": null,
+    "bootstrap_95": {
+      "lower": null,
+      "upper": null,
+      "sample_size": 0,
+      "resamples": 2000
+    },
+    "interpretation": "unknown: no paired non-skipped results"
+  }
+]

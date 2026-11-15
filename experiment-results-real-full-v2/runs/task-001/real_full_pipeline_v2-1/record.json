@@ -1,0 +1,53 @@
+{
+  "task_id": "task-001",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "run_index": 1,
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "code_version": "unversioned",
+  "config": {
+    "execution_mode": "real",
+    "research": "code_rag",
+    "patch": "git_apply_recount",
+    "validation_retries": 1
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 180
+  },
+  "started_at": "2026-11-14T08:07:00.491332Z",
+  "finished_at": "2026-11-14T08:08:15.491806Z",
+  "base_commit": "ccfcb0fdc3d2dc7dcca98de84c025362ab79c5ee",
+  "workspace_path": "experiment-results-real-full-v2/runs/task-001/real_full_pipeline_v2-1/worktree",
+  "result": {
+    "status": "failed",
+    "success": false,
+    "patch_passed": false,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": "parse_config uses a falsy-value check (`if not value`) before converting to a dict. An empty mapping `{}` is falsy, so the function returns `None` instead of continuing to `dict(value)` and returning `{}`. The two available tests explicitly expect `parse_config({}) == {}`.",
+    "patch_diff": "",
+    "logs": "repair failed at coding: LLM API request failed",
+    "failure_stage": "coding",
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 74.90870175010059,
+    "input_tokens": 1505,
+    "output_tokens": 1261,
+    "llm_calls": 2,
+    "estimated_cost_usd": null,
+    "execution_mode": "real"
+  },
+  "agent_input_task_id": "task-001",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

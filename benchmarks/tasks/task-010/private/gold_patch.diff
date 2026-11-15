@@ -1,0 +1,6 @@
+--- a/app.py
++++ b/app.py
+@@ -1,2 +1,2 @@
+ def repeat_text(text, count):
+-    return text
++    return text * count

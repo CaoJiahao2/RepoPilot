@@ -1,0 +1,44 @@
+environment: development
+
+llm:
+  enabled: false
+  provider: null
+  model: null
+  base_url: null
+
+embedding:
+  enabled: false
+  provider: null
+  model: null
+  base_url: null
+
+reranker:
+  enabled: false
+  provider: null
+  model: null
+  base_url: null
+
+database:
+  backend: sqlite
+  url: sqlite:///./repopilot.db
+
+checkpointer:
+  backend: sqlite
+
+sandbox:
+  backend: local_worktree
+  network_disabled: true
+  timeout_seconds: 300
+
+budget:
+  max_llm_calls: 30
+  max_total_tokens: 100000
+  max_runtime_seconds: 900
+  max_patch_retries: 3
+  max_replans: 2
+  max_tool_retries: 2
+  max_tool_calls: 100
+
+logging:
+  level: INFO
+  format: json

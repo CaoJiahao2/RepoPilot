@@ -1,0 +1,26 @@
+{
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "task_count": 10,
+  "run_count": 30,
+  "success_count": 28,
+  "failed_count": 2,
+  "skipped_count": 0,
+  "metrics": {
+    "resolution_rate": 0.9333333333333333,
+    "patch_pass_rate": 0.9333333333333333,
+    "regression_rate": 0.0,
+    "root_cause_accuracy": null,
+    "tool_success_rate": null,
+    "replanning_rate": 0.0,
+    "reflection_recovery_rate": null,
+    "memory_retrieval_hit_rate": null,
+    "latency_p50_seconds": 28.805911812523846,
+    "latency_p95_seconds": 40.09369502065237,
+    "total_input_tokens": 82825,
+    "total_output_tokens": 76446,
+    "total_llm_calls": 117,
+    "total_estimated_cost_usd": null,
+    "unknown_token_or_cost_tasks": 0
+  }
+}

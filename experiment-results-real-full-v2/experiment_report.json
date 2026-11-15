@@ -1,0 +1,123 @@
+{
+  "run_date": "2026-11-14",
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "task_count": 10,
+  "run_count": 30,
+  "success_count": 28,
+  "failed_count": 2,
+  "resolution_rate": 0.9333333333333333,
+  "resolution_bootstrap_95": {
+    "lower": 0.8333333333333334,
+    "upper": 1.0,
+    "sample_size": 30,
+    "resamples": 5000
+  },
+  "patch_pass_rate": 0.9333333333333333,
+  "regression_rate": 0.0,
+  "total_llm_calls": 117,
+  "mean_llm_calls": 3.9,
+  "total_input_tokens": 82825,
+  "total_output_tokens": 76446,
+  "mean_input_tokens": 2760.8,
+  "mean_output_tokens": 2548.2,
+  "latency_p50_seconds": 28.805911812523846,
+  "latency_p95_seconds": 40.09369502065237,
+  "mean_latency_seconds": 30.671761341614182,
+  "latency_mean_bootstrap_95": {
+    "lower": 28.053164888871834,
+    "upper": 34.58183836661822,
+    "sample_size": 30,
+    "resamples": 5000
+  },
+  "task_level": [
+    {
+      "task_id": "task-001",
+      "successes": 2,
+      "runs": 3,
+      "success_rate": 0.6666666666666666
+    },
+    {
+      "task_id": "task-002",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-003",
+      "successes": 2,
+      "runs": 3,
+      "success_rate": 0.6666666666666666
+    },
+    {
+      "task_id": "task-004",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-005",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-006",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-007",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-008",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-009",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    },
+    {
+      "task_id": "task-010",
+      "successes": 3,
+      "runs": 3,
+      "success_rate": 1.0
+    }
+  ],
+  "failure_stage_counts": {
+    "coding": 1,
+    "apply_patch": 1
+  },
+  "failure_cases": [
+    {
+      "task_id": "task-001",
+      "run_index": 1,
+      "failure_stage": "coding",
+      "failure_type": "coding",
+      "message": "repair failed at coding: LLM API request failed"
+    },
+    {
+      "task_id": "task-003",
+      "run_index": 1,
+      "failure_stage": "apply_patch",
+      "failure_type": "apply_patch",
+      "message": "repair failed at apply_patch: git apply --check rejected the patch"
+    }
+  ],
+  "limitations": [
+    "This is one real Full Pipeline condition, not the A-E causal comparison.",
+    "Root Cause Accuracy is unknown because evaluator-side expected-root-cause scoring is not automated.",
+    "Estimated monetary cost is unknown because no price table was configured.",
+    "Docker Sandbox was not used."
+  ]
+}

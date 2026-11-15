@@ -1,0 +1,7 @@
+comparison,left_group,right_group,paired_tasks,left_wins,right_wins,ties,left_success_rate,right_success_rate,success_rate_difference,ci95_lower,ci95_upper,interpretation
+Multi-Agent vs Single-Agent,B_static_multi_agent,A_single_agent_tools,10,0,0,0,,,,,,unknown: no paired non-skipped results
+Memory vs Static,C_static_memory,B_static_multi_agent,10,0,0,0,,,,,,unknown: no paired non-skipped results
+Reflection vs Static,D_static_reflection,B_static_multi_agent,10,0,0,0,,,,,,unknown: no paired non-skipped results
+Adaptive Planning ablation,E_full,abl_no_adaptive,10,0,0,0,,,,,,unknown: no paired non-skipped results
+Memory ablation,E_full,abl_no_memory,10,0,0,0,,,,,,unknown: no paired non-skipped results
+Reflection ablation,E_full,abl_no_reflection,10,0,0,0,,,,,,unknown: no paired non-skipped results

@@ -1,0 +1,19 @@
+{
+  "task_id": "task-003",
+  "repository_fixture": "repo",
+  "base_commit": "04cbc38cd21be74c43cd44bb4bcafb72c7acc03c",
+  "issue": "safe_divide raises ZeroDivisionError instead of returning zero when the denominator is zero",
+  "stack_trace": "File \"app.py\", line 1, in safe_divide",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "safe_divide(4, 0) == 0",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

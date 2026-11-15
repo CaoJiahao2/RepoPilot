@@ -1,0 +1,17 @@
+{
+  "task_id": "task-004",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def normalize_name(name):\n-    return name\n+    return name.strip() or \"\"\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "normalize_name does not normalize whitespace-only input",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

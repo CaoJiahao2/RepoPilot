@@ -1,0 +1,53 @@
+{
+  "task_id": "task-008",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "run_index": 1,
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "code_version": "unversioned",
+  "config": {
+    "execution_mode": "real",
+    "research": "code_rag",
+    "patch": "git_apply_recount",
+    "validation_retries": 1
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 180
+  },
+  "started_at": "2026-11-14T08:17:40.310382Z",
+  "finished_at": "2026-11-14T08:18:03.654757Z",
+  "base_commit": "fab4abd829df8343a6c87a8428b6a246e5bebe6d",
+  "workspace_path": "experiment-results-real-full-v2/runs/task-008/real_full_pipeline_v2-1/worktree",
+  "result": {
+    "status": "succeeded",
+    "success": true,
+    "patch_passed": true,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": "format_name concatenates first and last with no separator, so it returns \"AdaLovelace\" instead of \"Ada Lovelace\". The test evidence confirms the function is expected to produce a space-separated full name.",
+    "patch_diff": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def format_name(first, last):\n-    return first + last\n+    return first + \" \" + last",
+    "logs": "patch applied and post-patch tests passed",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 23.246256541926414,
+    "input_tokens": 2807,
+    "output_tokens": 1933,
+    "llm_calls": 4,
+    "estimated_cost_usd": null,
+    "execution_mode": "real"
+  },
+  "agent_input_task_id": "task-008",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

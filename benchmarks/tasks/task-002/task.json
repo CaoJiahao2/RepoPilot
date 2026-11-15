@@ -1,0 +1,19 @@
+{
+  "task_id": "task-002",
+  "repository_fixture": "repo",
+  "base_commit": "453722cf36ff036b06b2f57e0b099fe77ffaa100",
+  "issue": "clamp returns the input value instead of the upper bound when the value is too large",
+  "stack_trace": "File \"app.py\", line 2, in clamp",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "clamp(15, 0, 10) == 10",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

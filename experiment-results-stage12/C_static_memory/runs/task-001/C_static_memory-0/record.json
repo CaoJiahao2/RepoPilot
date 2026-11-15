@@ -1,0 +1,73 @@
+{
+  "task_id": "task-001",
+  "dataset": "tasks",
+  "experiment_group": "C_static_memory",
+  "run_index": 0,
+  "model_id": "unspecified",
+  "prompt_version": "v1",
+  "code_version": "unversioned",
+  "config": {
+    "name": "C_static_memory",
+    "label": "C. Static Multi-Agent + Memory",
+    "description": "Static multi-agent workflow with cross-task experience memory.",
+    "multi_agent": true,
+    "memory_enabled": true,
+    "reflection_enabled": false,
+    "adaptive_planning": false,
+    "model_id": "unspecified",
+    "prompt_version": "v1",
+    "generation_params": {},
+    "tool_set": [
+      "list_files",
+      "search_code",
+      "read_file",
+      "git_status",
+      "git_diff"
+    ],
+    "budget": {
+      "max_llm_calls": 30,
+      "max_total_tokens": 100000,
+      "max_tool_calls": 100,
+      "max_runtime_seconds": 900
+    },
+    "notes": ""
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 900
+  },
+  "started_at": "2026-11-11T16:04:51.450273Z",
+  "finished_at": "2026-11-11T16:04:51.524611Z",
+  "base_commit": "ccfcb0fdc3d2dc7dcca98de84c025362ab79c5ee",
+  "workspace_path": "experiment-results-stage12/C_static_memory/runs/task-001/C_static_memory-0/worktree",
+  "result": {
+    "status": "skipped",
+    "success": false,
+    "patch_passed": false,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": null,
+    "patch_diff": "",
+    "logs": "real benchmark executor is not configured; result is not an agent benchmark",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "llm_calls": 0,
+    "estimated_cost_usd": null,
+    "execution_mode": "skipped"
+  },
+  "agent_input_task_id": "task-001",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

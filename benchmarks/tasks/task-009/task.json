@@ -1,0 +1,19 @@
+{
+  "task_id": "task-009",
+  "repository_fixture": "repo",
+  "base_commit": "5be67baca925b72cfdd92d37d6208fbb1f2b9c7b",
+  "issue": "apply_discount applies the discount percentage as an absolute amount",
+  "stack_trace": "File \"app.py\", line 1, in apply_discount",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "apply_discount(200, 25) == 150",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

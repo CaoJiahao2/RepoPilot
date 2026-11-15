@@ -1,0 +1,17 @@
+{
+  "task_id": "task-003",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,4 @@\n def safe_divide(numerator, denominator):\n+    if denominator == 0:\n+        return 0\n     return numerator / denominator\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "zero denominator is not guarded before division",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

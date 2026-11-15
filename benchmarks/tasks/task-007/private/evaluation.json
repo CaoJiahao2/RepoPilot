@@ -1,0 +1,17 @@
+{
+  "task_id": "task-007",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def sum_positive(values):\n-    return sum(values)\n+    return sum(value for value in values if value > 0)\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "negative values are not filtered before summation",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

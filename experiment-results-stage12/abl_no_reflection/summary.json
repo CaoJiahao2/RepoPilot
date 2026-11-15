@@ -1,0 +1,26 @@
+{
+  "dataset": "tasks",
+  "experiment_group": "abl_no_reflection",
+  "task_count": 10,
+  "run_count": 10,
+  "success_count": 0,
+  "failed_count": 0,
+  "skipped_count": 10,
+  "metrics": {
+    "resolution_rate": null,
+    "patch_pass_rate": null,
+    "regression_rate": null,
+    "root_cause_accuracy": null,
+    "tool_success_rate": null,
+    "replanning_rate": null,
+    "reflection_recovery_rate": null,
+    "memory_retrieval_hit_rate": null,
+    "latency_p50_seconds": null,
+    "latency_p95_seconds": null,
+    "total_input_tokens": null,
+    "total_output_tokens": null,
+    "total_llm_calls": 0,
+    "total_estimated_cost_usd": null,
+    "unknown_token_or_cost_tasks": 10
+  }
+}

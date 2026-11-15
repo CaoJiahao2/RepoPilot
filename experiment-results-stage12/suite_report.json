@@ -1,0 +1,547 @@
+{
+  "dataset": "benchmarks/tasks",
+  "created_at": "2026-11-11T16:04:57.440965Z",
+  "groups": [
+    {
+      "name": "A_single_agent_tools",
+      "label": "A. Single Agent + Tools",
+      "description": "One agent with the common tool set.",
+      "multi_agent": false,
+      "memory_enabled": false,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "B_static_multi_agent",
+      "label": "B. Static Multi-Agent",
+      "description": "Fixed multi-agent workflow without memory or reflection.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "C_static_memory",
+      "label": "C. Static Multi-Agent + Memory",
+      "description": "Static multi-agent workflow with cross-task experience memory.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": false,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "D_static_reflection",
+      "label": "D. Static Multi-Agent + Reflection",
+      "description": "Static multi-agent workflow with execution-aware reflection.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": true,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "E_full",
+      "label": "E. Full RepoPilot",
+      "description": "Adaptive planning with memory and reflection.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": true,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_adaptive",
+      "label": "Full vs No Adaptive Planning",
+      "description": "Full system with adaptive planning disabled.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": true,
+      "adaptive_planning": false,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_memory",
+      "label": "Full vs No Memory",
+      "description": "Full system with experience memory disabled.",
+      "multi_agent": true,
+      "memory_enabled": false,
+      "reflection_enabled": true,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    },
+    {
+      "name": "abl_no_reflection",
+      "label": "Full vs No Reflection",
+      "description": "Full system with reflection disabled.",
+      "multi_agent": true,
+      "memory_enabled": true,
+      "reflection_enabled": false,
+      "adaptive_planning": true,
+      "model_id": "unspecified",
+      "prompt_version": "v1",
+      "generation_params": {},
+      "tool_set": [
+        "list_files",
+        "search_code",
+        "read_file",
+        "git_status",
+        "git_diff"
+      ],
+      "budget": {
+        "max_llm_calls": 30,
+        "max_total_tokens": 100000,
+        "max_tool_calls": 100,
+        "max_runtime_seconds": 900
+      },
+      "notes": ""
+    }
+  ],
+  "summaries": {
+    "A_single_agent_tools": {
+      "dataset": "tasks",
+      "experiment_group": "A_single_agent_tools",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "B_static_multi_agent": {
+      "dataset": "tasks",
+      "experiment_group": "B_static_multi_agent",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "C_static_memory": {
+      "dataset": "tasks",
+      "experiment_group": "C_static_memory",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "D_static_reflection": {
+      "dataset": "tasks",
+      "experiment_group": "D_static_reflection",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "E_full": {
+      "dataset": "tasks",
+      "experiment_group": "E_full",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "abl_no_adaptive": {
+      "dataset": "tasks",
+      "experiment_group": "abl_no_adaptive",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "abl_no_memory": {
+      "dataset": "tasks",
+      "experiment_group": "abl_no_memory",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    },
+    "abl_no_reflection": {
+      "dataset": "tasks",
+      "experiment_group": "abl_no_reflection",
+      "task_count": 10,
+      "run_count": 10,
+      "success_count": 0,
+      "failed_count": 0,
+      "skipped_count": 10,
+      "metrics": {
+        "resolution_rate": null,
+        "patch_pass_rate": null,
+        "regression_rate": null,
+        "root_cause_accuracy": null,
+        "tool_success_rate": null,
+        "replanning_rate": null,
+        "reflection_recovery_rate": null,
+        "memory_retrieval_hit_rate": null,
+        "latency_p50_seconds": null,
+        "latency_p95_seconds": null,
+        "total_input_tokens": null,
+        "total_output_tokens": null,
+        "total_llm_calls": 0,
+        "total_estimated_cost_usd": null,
+        "unknown_token_or_cost_tasks": 10
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "comparison": "Multi-Agent vs Single-Agent",
+      "left_group": "B_static_multi_agent",
+      "right_group": "A_single_agent_tools",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    },
+    {
+      "comparison": "Memory vs Static",
+      "left_group": "C_static_memory",
+      "right_group": "B_static_multi_agent",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    },
+    {
+      "comparison": "Reflection vs Static",
+      "left_group": "D_static_reflection",
+      "right_group": "B_static_multi_agent",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    },
+    {
+      "comparison": "Adaptive Planning ablation",
+      "left_group": "E_full",
+      "right_group": "abl_no_adaptive",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    },
+    {
+      "comparison": "Memory ablation",
+      "left_group": "E_full",
+      "right_group": "abl_no_memory",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    },
+    {
+      "comparison": "Reflection ablation",
+      "left_group": "E_full",
+      "right_group": "abl_no_reflection",
+      "paired_tasks": 10,
+      "left_wins": 0,
+      "right_wins": 0,
+      "ties": 0,
+      "left_success_rate": null,
+      "right_success_rate": null,
+      "success_rate_difference": null,
+      "bootstrap_95": {
+        "lower": null,
+        "upper": null,
+        "sample_size": 0,
+        "resamples": 2000
+      },
+      "interpretation": "unknown: no paired non-skipped results"
+    }
+  ],
+  "failure_breakdown": [],
+  "data_status": "not_verified",
+  "limitations": [
+    "results marked skipped or unknown are not agent benchmark evidence",
+    "bootstrap intervals require paired non-skipped task results",
+    "cost is unknown unless the executor reports token and price data"
+  ]
+}

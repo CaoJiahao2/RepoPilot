@@ -1,0 +1,9 @@
+--- a/app.py
++++ b/app.py
+@@ -1,5 +1,5 @@
+ def first_nonempty(values, default):
+     for value in values:
+         if value:
+             return value
+-    return None
++    return default

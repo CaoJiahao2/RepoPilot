@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="516" viewBox="0 0 920 516">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:22px;font-weight:700}.sub{font-size:13px;fill:#566573}.bar{fill:#2874a6}.unknown{fill:#b3b6b7}.label{font-size:13px}.value{font-size:12px;fill:#34495e}</style>
+<rect width="920" height="516" fill="white"/>
+<text x="28" y="38" class="title">Experiment Latency P50</text>
+<text x="28" y="64" class="sub">Values are seconds; unknown means no verified execution.</text>
+<text x="28" y="116" class="label">A_single_agent_tools</text>
+<rect x="310" y="98" width="360" height="26" class="unknown"/>
+<text x="685" y="116" class="value">unknown</text>
+<text x="28" y="158" class="label">B_static_multi_agent</text>
+<rect x="310" y="140" width="360" height="26" class="unknown"/>
+<text x="685" y="158" class="value">unknown</text>
+<text x="28" y="200" class="label">C_static_memory</text>
+<rect x="310" y="182" width="360" height="26" class="unknown"/>
+<text x="685" y="200" class="value">unknown</text>
+<text x="28" y="242" class="label">D_static_reflection</text>
+<rect x="310" y="224" width="360" height="26" class="unknown"/>
+<text x="685" y="242" class="value">unknown</text>
+<text x="28" y="284" class="label">E_full</text>
+<rect x="310" y="266" width="360" height="26" class="unknown"/>
+<text x="685" y="284" class="value">unknown</text>
+<text x="28" y="326" class="label">abl_no_adaptive</text>
+<rect x="310" y="308" width="360" height="26" class="unknown"/>
+<text x="685" y="326" class="value">unknown</text>
+<text x="28" y="368" class="label">abl_no_memory</text>
+<rect x="310" y="350" width="360" height="26" class="unknown"/>
+<text x="685" y="368" class="value">unknown</text>
+<text x="28" y="410" class="label">abl_no_reflection</text>
+<rect x="310" y="392" width="360" height="26" class="unknown"/>
+<text x="685" y="410" class="value">unknown</text>
+</svg>

@@ -1,0 +1,73 @@
+{
+  "task_id": "task-005",
+  "dataset": "tasks",
+  "experiment_group": "abl_no_reflection",
+  "run_index": 0,
+  "model_id": "unspecified",
+  "prompt_version": "v1",
+  "code_version": "unversioned",
+  "config": {
+    "name": "abl_no_reflection",
+    "label": "Full vs No Reflection",
+    "description": "Full system with reflection disabled.",
+    "multi_agent": true,
+    "memory_enabled": true,
+    "reflection_enabled": false,
+    "adaptive_planning": true,
+    "model_id": "unspecified",
+    "prompt_version": "v1",
+    "generation_params": {},
+    "tool_set": [
+      "list_files",
+      "search_code",
+      "read_file",
+      "git_status",
+      "git_diff"
+    ],
+    "budget": {
+      "max_llm_calls": 30,
+      "max_total_tokens": 100000,
+      "max_tool_calls": 100,
+      "max_runtime_seconds": 900
+    },
+    "notes": ""
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 900
+  },
+  "started_at": "2026-11-11T16:04:57.004890Z",
+  "finished_at": "2026-11-11T16:04:57.074629Z",
+  "base_commit": "c9d7c977368d32aea51eef8e485a2e06dc527618",
+  "workspace_path": "experiment-results-stage12/abl_no_reflection/runs/task-005/abl_no_reflection-0/worktree",
+  "result": {
+    "status": "skipped",
+    "success": false,
+    "patch_passed": false,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": null,
+    "patch_diff": "",
+    "logs": "real benchmark executor is not configured; result is not an agent benchmark",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "llm_calls": 0,
+    "estimated_cost_usd": null,
+    "execution_mode": "skipped"
+  },
+  "agent_input_task_id": "task-005",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

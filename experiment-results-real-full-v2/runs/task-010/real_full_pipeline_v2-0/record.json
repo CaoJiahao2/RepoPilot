@@ -1,0 +1,53 @@
+{
+  "task_id": "task-010",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "run_index": 0,
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "code_version": "unversioned",
+  "config": {
+    "execution_mode": "real",
+    "research": "code_rag",
+    "patch": "git_apply_recount",
+    "validation_retries": 1
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 180
+  },
+  "started_at": "2026-11-14T08:20:15.765640Z",
+  "finished_at": "2026-11-14T08:20:47.934422Z",
+  "base_commit": "5a3502c4ca8cb8749947b93cbe05fafa4220902b",
+  "workspace_path": "experiment-results-real-full-v2/runs/task-010/real_full_pipeline_v2-0/worktree",
+  "result": {
+    "status": "succeeded",
+    "success": true,
+    "patch_passed": true,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": "The repeat_text function ignores the count parameter and always returns the input text once, so it cannot produce the requested number of copies.",
+    "patch_diff": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def repeat_text(text, count):\n-    return text\n+    return text * count",
+    "logs": "patch applied and post-patch tests passed",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 32.077604666003026,
+    "input_tokens": 2738,
+    "output_tokens": 2880,
+    "llm_calls": 4,
+    "estimated_cost_usd": null,
+    "execution_mode": "real"
+  },
+  "agent_input_task_id": "task-010",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

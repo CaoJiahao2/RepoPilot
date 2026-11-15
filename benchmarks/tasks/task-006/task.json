@@ -1,0 +1,19 @@
+{
+  "task_id": "task-006",
+  "repository_fixture": "repo",
+  "base_commit": "f33bf1662d0581ca7ab8298f56cdb3353dcd745e",
+  "issue": "first_nonempty returns None instead of an empty string when no non-empty value exists",
+  "stack_trace": "File \"app.py\", line 4, in first_nonempty",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "first_nonempty([], \"\") == \"\"",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

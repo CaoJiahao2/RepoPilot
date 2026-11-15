@@ -1,0 +1,19 @@
+{
+  "task_id": "task-005",
+  "repository_fixture": "repo",
+  "base_commit": "c9d7c977368d32aea51eef8e485a2e06dc527618",
+  "issue": "is_even treats zero as odd even though zero is even",
+  "stack_trace": "File \"app.py\", line 1, in is_even",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "is_even(0) is True",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "task-001",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,4 +1,4 @@\n def parse_config(value):\n     if not value:\n-        return None\n+        return {}\n     return dict(value)\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "empty mappings return None instead of an empty mapping",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

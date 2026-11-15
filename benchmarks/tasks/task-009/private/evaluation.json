@@ -1,0 +1,17 @@
+{
+  "task_id": "task-009",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def apply_discount(price, percent):\n-    return price - percent\n+    return price * (1 - percent / 100)\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "the percentage is subtracted as an absolute value",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

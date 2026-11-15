@@ -1,0 +1,19 @@
+{
+  "task_id": "task-004",
+  "repository_fixture": "repo",
+  "base_commit": "a0395f4e1ca69914f45aed32bfc63eda20c1c044",
+  "issue": "normalize_name preserves whitespace-only input instead of returning an empty string",
+  "stack_trace": "File \"app.py\", line 1, in normalize_name",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "normalize_name(\"   \") == \"\"",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

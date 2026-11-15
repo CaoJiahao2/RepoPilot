@@ -1,0 +1,53 @@
+{
+  "task_id": "task-003",
+  "dataset": "tasks",
+  "experiment_group": "real_full_pipeline_v2",
+  "run_index": 0,
+  "model_id": "deepseek-v4-1-flash-261017",
+  "prompt_version": "schema-evidence-retry-v3",
+  "code_version": "unversioned",
+  "config": {
+    "execution_mode": "real",
+    "research": "code_rag",
+    "patch": "git_apply_recount",
+    "validation_retries": 1
+  },
+  "budget": {
+    "max_llm_calls": 30,
+    "max_total_tokens": 100000,
+    "max_tool_calls": 100,
+    "max_runtime_seconds": 180
+  },
+  "started_at": "2026-11-14T08:10:20.887825Z",
+  "finished_at": "2026-11-14T08:10:50.583194Z",
+  "base_commit": "04cbc38cd21be74c43cd44bb4bcafb72c7acc03c",
+  "workspace_path": "experiment-results-real-full-v2/runs/task-003/real_full_pipeline_v2-0/worktree",
+  "result": {
+    "status": "succeeded",
+    "success": true,
+    "patch_passed": true,
+    "regression_detected": false,
+    "root_cause_correct": null,
+    "root_cause": "safe_divide performs numerator / denominator directly without checking for a zero denominator, so Python raises ZeroDivisionError instead of returning 0 as the test expects.",
+    "patch_diff": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,4 @@\n def safe_divide(numerator, denominator):\n+    if denominator == 0:\n+        return 0\n     return numerator / denominator",
+    "logs": "patch applied and post-patch tests passed",
+    "failure_stage": null,
+    "failure_type": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "replans": 0,
+    "reflection_attempts": 0,
+    "reflection_recoveries": 0,
+    "memory_retrievals": 0,
+    "memory_hits": 0,
+    "duration_seconds": 29.60430658305995,
+    "input_tokens": 2811,
+    "output_tokens": 2679,
+    "llm_calls": 4,
+    "estimated_cost_usd": null,
+    "execution_mode": "real"
+  },
+  "agent_input_task_id": "task-003",
+  "gold_patch_available_to_agent": false,
+  "verification_command_available_to_agent": false
+}

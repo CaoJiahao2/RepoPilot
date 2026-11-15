@@ -1,0 +1,8 @@
+--- a/app.py
++++ b/app.py
+@@ -2,4 +2,4 @@
+     for value in values:
+         if value:
+             return value
+-    return None
++    return default

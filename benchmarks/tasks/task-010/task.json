@@ -1,0 +1,19 @@
+{
+  "task_id": "task-010",
+  "repository_fixture": "repo",
+  "base_commit": "5a3502c4ca8cb8749947b93cbe05fafa4220902b",
+  "issue": "repeat_text returns one copy instead of the requested count",
+  "stack_trace": "File \"app.py\", line 1, in repeat_text",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "repeat_text(\"ab\", 3) == \"ababab\"",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

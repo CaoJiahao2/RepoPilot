@@ -1,0 +1,17 @@
+{
+  "task_id": "task-005",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,2 +1,2 @@\n def is_even(value):\n-    return value != 0 and value % 2 == 0\n+    return value % 2 == 0\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "zero is excluded before parity is evaluated",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}

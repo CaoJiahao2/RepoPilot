@@ -1,0 +1,19 @@
+{
+  "task_id": "task-007",
+  "repository_fixture": "repo",
+  "base_commit": "ed168146a83d2879fb101bcdddbd0ae3ab845745",
+  "issue": "sum_positive includes negative values in the result",
+  "stack_trace": "File \"app.py\", line 1, in sum_positive",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "sum_positive([1, -2, 3]) == 4",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "task-001",
+  "repository_fixture": "repo",
+  "base_commit": "ccfcb0fdc3d2dc7dcca98de84c025362ab79c5ee",
+  "issue": "parse_config returns None for an empty mapping, but it should return an empty dictionary",
+  "stack_trace": "File \"app.py\", line 1, in parse_config",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "parse_config({}) == {}",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

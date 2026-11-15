@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="222" viewBox="0 0 920 222">
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.title{font-size:22px;font-weight:700}.sub{font-size:13px;fill:#566573}.bar{fill:#2874a6}.unknown{fill:#b3b6b7}.label{font-size:13px}.value{font-size:12px;fill:#34495e}</style>
+<rect width="920" height="222" fill="white"/>
+<text x="28" y="38" class="title">Experiment Latency P50</text>
+<text x="28" y="64" class="sub">Values are seconds; unknown means no verified execution.</text>
+<text x="28" y="116" class="label">real_full_pipeline_v2</text>
+<rect x="310" y="98" width="360" height="26" class="bar"/>
+<text x="685" y="116" class="value">28.806 (p50 seconds)</text>
+</svg>

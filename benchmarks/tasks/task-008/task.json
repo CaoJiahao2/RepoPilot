@@ -1,0 +1,19 @@
+{
+  "task_id": "task-008",
+  "repository_fixture": "repo",
+  "base_commit": "fab4abd829df8343a6c87a8428b6a246e5bebe6d",
+  "issue": "format_name omits the separator between first and last name",
+  "stack_trace": "File \"app.py\", line 1, in format_name",
+  "test_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_behavior": "format_name(\"Ada\", \"Lovelace\") == \"Ada Lovelace\"",
+  "metadata": {
+    "language": "python",
+    "target_test": "tests/test_app.py",
+    "difficulty": "fixture"
+  }
+}

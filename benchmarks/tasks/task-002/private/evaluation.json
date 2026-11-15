@@ -1,0 +1,17 @@
+{
+  "task_id": "task-002",
+  "gold_patch": "--- a/app.py\n+++ b/app.py\n@@ -1,4 +1,4 @@\n def clamp(value, low, high):\n     if value > high:\n-        return value\n+        return high\n     return max(low, value)\n",
+  "verification_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "expected_root_cause": "the upper-bound branch returns value instead of high",
+  "regression_command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q"
+  ]
+}
